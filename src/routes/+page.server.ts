@@ -1,20 +1,10 @@
-import { PrismaClient } from '@prisma/client'
-import process from 'node:process'
+import prisma from '$lib/prisma';
+import type { PageServerLoad } from './$types';
 
-const prisma = new PrismaClient()
+export const load = (async () => {
+// 1.
+const response = await prisma.articles.findMany()
 
-async function main() {
-  // ... you will write your Prisma Client queries here
-  const allArticles = await prisma.articles.findMany()
-  console.log(allArticles)
-}
-
-main()
-  .then(async () => {
-    await prisma.$disconnect()
-  })
-  .catch(async (e) => {
-    console.error(e)
-    await prisma.$disconnect()
-    process.exit(1)
-  })
+// 2.
+return { feed: response };
+}) satisfies PageServerLoad;

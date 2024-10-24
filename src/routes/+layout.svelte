@@ -11,7 +11,7 @@
                 <a href="/">Home</a>
             </div>
             <div class="no-underline text-black hover:text-[#fe9b20] px-3">
-                <a href="/">Articles</a>
+                <a href="/articles">Articles</a>
             </div>
             <div class="no-underline text-black hover:text-[#fe9b20] px-3">
                 <a href="/">About</a>
@@ -26,7 +26,7 @@
 
     <slot></slot>
     
-    <div class="bg-slate-600 text-white p-30 flex justify-center items-center text-center absolute bottom-0 w-full h-[7.5%]">
+    <div class="bg-slate-600 text-white p-30 flex justify-center items-center text-center absolute  w-full h-[7.5%]">
         <p>This blog is student ran and all content is produced by students</p>
     </div>
     
