@@ -1,5 +1,6 @@
 <script lang="ts">
     import type { PageData } from "./$types";
+    import { goto } from "$app/navigation";
     export let article: PageData;
 
     let titleLength = 39;
@@ -7,17 +8,19 @@
     let snippetLength = 81;
 </script>
 
-<div class="w-[700px] h-[200px] bg-white m-[40px] p-[20px] flex items-center rounded-[20px] hover:shadow-3xl transition-shadow"><!-- article card -->
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<!-- svelte-ignore a11y-no-static-element-interactions -->
+<div class="w-[700px] h-[200px] bg-white m-[40px] p-[20px] flex items-center rounded-[20px] hover:shadow-3xl transition-shadow" on:click={() => goto(`/articles/${article.slug}`)}><!-- article card -->
     <div class="article-img"> <!-- article-img -->
         {#if article.image == ""}
             <img 
-                class="w-[175px] h-[175px] rounded-[20px] object-fill float-left"
+                class="w-[175px] h-[175px] rounded-[20px] object-fill float-left shrink-0"
                 src="https://storage.googleapis.com/beehivepress/images/articles/article.jpeg"
                 alt="default article img" 
             />
         {:else}
             <img
-                class="w-[175px] h-[175px] rounded-[20px] object-fill float-left"
+                class="w-[175px] h-[175px] rounded-[20px] object-fill float-left shrink-0"
                 src={article.image}
                 alt="article img"
             />
