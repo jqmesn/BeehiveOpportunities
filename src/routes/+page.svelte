@@ -20,7 +20,7 @@
             <div class="flex flex-col justify-center text-center"> <!-- this-week -->
                 <h1 class="font-semibold text-[2em]">New This Month</h1>
                 <div class="text-left"> <!-- articles -->
-                    {#each data.feed as article (article.id)}
+                    {#each data.feed as article, i} <!--  (article.id) -->
                         {#if article.createdAt.getMonth().toString() == new Date().getMonth().toString() && article.createdAt.getFullYear().toString() == new Date().getFullYear().toString()}
                             <Article {article} />
                         {/if}
@@ -30,7 +30,7 @@
             <div class="text-center">
                 <h1 class="font-semibold text-[2em]">Monthly Recap</h1>
                 <div class="text-left">
-                    {#each data.feed as article (article.id)}
+                    {#each data.feed as article, i} <!--  (article.id) -->
                         {#if article.category.toLowerCase() == "monthly recap"}
                             <Article {article} />
                         {/if}

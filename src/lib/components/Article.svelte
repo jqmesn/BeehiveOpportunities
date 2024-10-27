@@ -7,17 +7,17 @@
     let snippetLength = 81;
 </script>
 
-<div class="w-[600px] h-[200px] bg-white m-[20px] p-[20px] flex items-center rounded-[20px] hover:shadow-3xl transition-shadow"><!-- article card -->
+<div class="w-[700px] h-[200px] bg-white m-[40px] p-[20px] flex items-center rounded-[20px] hover:shadow-3xl transition-shadow"><!-- article card -->
     <div class="article-img"> <!-- article-img -->
         {#if article.image == ""}
             <img 
-                class="w-[175px] h-[175px] rounded-[20px]"
+                class="w-[175px] h-[175px] rounded-[20px] object-fill float-left"
                 src="https://storage.googleapis.com/beehivepress/images/articles/article.jpeg"
                 alt="default article img" 
             />
         {:else}
             <img
-                class="w-[175px] h-[175px] rounded-[20px]"
+                class="w-[175px] h-[175px] rounded-[20px] object-fill float-left"
                 src={article.image}
                 alt="article img"
             />
