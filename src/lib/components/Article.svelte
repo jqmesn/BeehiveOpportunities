@@ -10,7 +10,7 @@
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <!-- svelte-ignore a11y-no-static-element-interactions -->
-<div class="w-[700px] h-[200px] bg-white m-[40px] p-[20px] flex items-center rounded-[20px] hover:shadow-3xl transition-shadow" on:click={() => goto(`/articles/${article.slug}`)}><!-- article card -->
+<div class="w-[600px] h-[200px] bg-white m-[20px] p-[20px] flex items-center rounded-[20px] hover:shadow-3xl transition-shadow" on:click={() => goto(`/articles/${article.slug}`)}><!-- article card -->
     <div class="article-img"> <!-- article-img -->
         {#if article.image == ""}
             <img 
